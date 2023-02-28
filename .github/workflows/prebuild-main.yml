@@ -49,6 +49,7 @@ jobs:
         with:
           node-version: 16.x
       - uses: actions/checkout@v1
+      - run: npm install --global --production windows-build-tools --vs2017
       - run: npm i
       - name: Prebuild
         run: |
