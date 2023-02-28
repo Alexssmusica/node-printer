@@ -49,8 +49,7 @@ jobs:
         with:
           node-version: 16.x
       - uses: actions/checkout@v1
-      - run: npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
-      - run: npm config set msvs_version 2022 --global
+      - run: npm install --global --production windows-build-tools --vs2022
       - run: npm i
       - name: Prebuild
         run: |
