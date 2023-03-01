@@ -1,7 +1,7 @@
 {
   "name": "@alexssmusica/node-printer",
   "description": "Node.js printer bindings",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "homepage": "https://github.com/Alexssmusica/node-printer",
   "author": {
     "name": "Ion Lupascu",
@@ -16,11 +16,11 @@
     "url": "git://github.com/Alexssmusica/node-printer.git"
   },
   "devDependencies": {
+    "node-abi": "^3.33.0",
     "nodeunit": "*",
-    "prebuild": "^11.0.3",
-    "prebuild-ci": "^4.0.0",
-    "node-abi": "^3.24.0",
-    "patch-package": "^6.4.7"
+    "patch-package": "^6.5.1",
+    "prebuild": "^11.0.4",
+    "prebuild-ci": "^4.0.0"
   },
   "engines": {
     "node": ">= 4.0.0"
@@ -47,8 +47,8 @@
   ],
   "main": "./lib/printer",
   "dependencies": {
-    "nan": "git+https://github.com/weedz/nan.git",
-    "prebuild-install": "^7.0.1"
+    "nan": "^2.17.0",
+    "prebuild-install": "^7.1.1"
   },
   "types": "types/index.d.ts"
 }
