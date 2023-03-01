@@ -9,7 +9,7 @@
     "email": "ionlupascu@gmail.com"
   },
   "contributors": [
-    "Alex Santos <alexssmuiscag@gmail.com>"
+    "Alex Santos <alexssmusicacag@gmail.com>"
   ],
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "host": "https://github.com/Alexssmusica/node-printer/releases/download/",
     "remote_path": "v{version}"
   },
+  "private": false,
   "licenses": [
     {
       "type": "BSD"
