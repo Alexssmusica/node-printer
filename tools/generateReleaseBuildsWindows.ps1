@@ -9,12 +9,27 @@ $PACKAGE_VERSION = node -pe "require('./package.json').version"
 echo $SOURCE_PATH
 
 $node_versions = @(
-  "14.19.3"
+  "0.10.48",
+  "0.12.18",
+  "4.9.1",
+  "5.9.1",
+  "6.17.1",
+  "8.16.1",
+  "10.16.0",
+  "11.15.0",
+  "12.10.0"
 )
 
 $electron_versions = @(
-  "20.0.0",
-  "20.3.12"
+  "1.2.8",
+  "1.3.8",
+  "1.4.6",
+  "1.7.12",
+  "2.0.18",
+  "3.1.13",
+  "4.2.10",
+  "5.0.10",
+  "6.0.7"
 )
 
 # remove old build directory
