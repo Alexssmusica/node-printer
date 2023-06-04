@@ -17,6 +17,10 @@
     },
     {
       'target_name': '<(module_name)',
+       "msvs_settings": {
+        # "VCCLCompilerTool": { "ExceptionHandling": 1 },
+        "VCCLCompilerTool": { "AdditionalOptions": ["/std:c++17" ] }
+      },
       'sources': [
         'src/node_printer.cc',
         'src/node_printer_win.cc',
