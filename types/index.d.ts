@@ -33,6 +33,7 @@ export interface PrinterDetails {
     name: string;
     isDefault: boolean;
     options: { [key: string]: string; };
+    status: string;
 }
 
 export interface PrinterDriverOptions {
