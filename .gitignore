@@ -10,3 +10,4 @@ node_modules
 prebuilds
 .prebuildrc
 .idea
+.env
