@@ -25,6 +25,7 @@
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "14.0.3",
     "@types/node": "^22.15.3",
+    "dotenv": "^16.5.0",
     "node-abi": "^3.56.0",
     "nodeunit": "^0.11.3",
     "prebuild": "^13.0.1",
