@@ -1,7 +1,8 @@
 {
   "variables": {
     "module_name%": "node_printer",
-    "module_path%": "lib/binding"
+    "module_path%": "lib",
+    "openssl_fips": ""
   },
   'targets': [
     {
@@ -16,20 +17,17 @@
       ]
     },
     {
-      'target_name': '<(module_name)',
-       "msvs_settings": {
-        # "VCCLCompilerTool": { "ExceptionHandling": 1 },
-        "VCCLCompilerTool": { "AdditionalOptions": ["/std:c++17" ] }
-      },
+      'target_name': 'node_printer',
       'sources': [
-        'src/node_printer.cc',
-        'src/node_printer_win.cc',
-        'src/node_printer_posix.cc'
+        # is like "ls -1 src/*.cc", but gyp does not support direct patterns on
+        # sources
+        '<!@(["python", "tools/getSourceFiles.py", "src", "cc"])'
       ],
       'include_dirs' : [
         "<!(node -e \"require('nan')\")"
       ],
-      'cflags_cc+': [
+      'cflags_cc': [
+        "-DNOMINMAX",
         "-Wno-deprecated-declarations"
       ],
       'conditions': [
@@ -39,7 +37,10 @@
         ['OS!="win"', {
           'sources/': [['exclude', '_win\\.cc$']]}, {
           # else if OS==win, exclude also posix files
-          'sources/': [['exclude', '_posix\\.cc$']]
+          'sources/': [['exclude', '_posix\\.cc$']],
+          'defines': [
+            'NOMINMAX'
+          ]
         }],
         # specific settings
         ['OS!="win"', {
@@ -65,9 +66,12 @@
             "-stdlib=libc++"
           ],
           'xcode_settings': {
-            "OTHER_CPLUSPLUSFLAGS":["-std=c++14", "-stdlib=libc++"],
+            "OTHER_CPLUSPLUSFLAGS":["-std=c++20", "-stdlib=libc++"],
             "OTHER_LDFLAGS": ["-stdlib=libc++"],
-            "MACOSX_DEPLOYMENT_TARGET": "10.7",
+            "MACOSX_DEPLOYMENT_TARGET": "10.14",
+            "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+            "CLANG_CXX_LIBRARY": "libc++",
+            "CLANG_CXX_LANGUAGE_STANDARD": "c++20"
           },
         }],
       ]

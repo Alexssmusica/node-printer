@@ -1,73 +1,52 @@
 {
-  "name": "@alexssmusica/node-printer",
+  "name": "@Alexssmusica/node-printer",
   "description": "Node.js printer bindings",
-  "version": "0.6.7",
-  "main": "./lib/printer",
-  "exports": {
-    ".": "./lib/printer.js",
-    "./build": "./build.js"
-  },
-  "scripts": {
-    "install": "prebuild-install || node-gyp rebuild",
-    "prebuild": "prebuild",
-    "rebuild": "node-gyp rebuild",
-    "test": "nodeunit test"
-  },
-  "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.9",
-    "nan": "^2.18.0",
-    "prebuild-install": "^7.0.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "eslint": "^7.11.0",
-    "eslint-config-egg": "^8.1.2",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "node-abi": "^3.43.0",
-    "nodeunit": "*",
-    "patch-package": "^6.4.7",
-    "prebuild": "^11.0.4",
-    "prebuild-ci": "^4.0.0"
-  },
-  "overrides": {
-    "node-gyp": "9.3.1"
-  },
-  "engines": {
-    "node": ">= 4.0.0"
-  },
-  "binary": {
-    "module_name": "node_printer",
-    "module_path": "./lib/",
-    "host": "https://github.com/Alexssmusica/node-printer/releases/download/",
-    "remote_path": "v{version}"
-  },
-  "directories": {
-    "example": "examples",
-    "lib": "lib",
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Alexssmusica/node-printer.git"
-  },
-  "keywords": [
-    "native",
-    "node",
-    "printer"
-  ],
-  "types": "types/index.d.ts",
+  "version": "0.7.0",
+  "homepage": "https://github.com/Alexssmusica/node-printer",
   "author": {
     "name": "Ion Lupascu",
     "url": "http://program-support.co.uk/",
     "email": "ionlupascu@gmail.com"
   },
   "contributors": [
+    "Steven Lehn <steven.lehn@Alexssmusica.com>",
     "Thiago Lugli <thiagoelg@gmail.com>",
-    "Eko Eryanto <ekoeryanto@gmail.com>",
-    "Francimar Alves <mazinsw@gmail.com>",
-    "Damon Smith <damon.default@gmail.com>"
+    "Eko Eryanto <ekoeryanto@gmail.com>"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Alexssmusica/node-printer.git"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "node-abi": "^3.56.0",
+    "nodeunit": "^0.11.3",
+    "prebuild": "^13.0.1",
+    "prebuild-ci": "^4.0.0"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "scripts": {
+    "install": "prebuild-install || node-gyp rebuild",
+    "prebuild-all": "prebuild --force --strip --verbose --target 18.0.0 --target 19.0.0 --target 20.0.0 --target 22.0.0",
+    "prebuild": "prebuild",
+    "prebuild-electron": "prebuild --strip --verbose",
+    "rebuild": "node-gyp rebuild",
+    "test": "nodeunit test"
+  },
+  "binary": {
+    "module_name": "node_printer",
+    "module_path": "lib",
+    "host": "https://github.com/Alexssmusica/node-printer/releases/download/",
+    "remote_path": "v{version}",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz"
+  },
+  "license": "MIT",
+  "main": "./lib/printer",
+  "dependencies": {
+    "nan": "^2.22.2",
+    "prebuild-install": "^7.1.1"
+  },
+  "types": "types/index.d.ts"
 }

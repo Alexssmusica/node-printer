@@ -11,6 +11,7 @@ export function setJob(printerName: string, jobId: number, command: 'CANCEL' | s
 export function getSupportedJobCommands(): string[];
 
 export interface PrintDirectOptions {
+    //@ts-ignore
     data: string | Buffer;
     printer?: string | undefined;
     type?: 'RAW' | 'TEXT' | 'PDF' | 'JPEG' | 'POSTSCRIPT' | 'COMMAND' | 'AUTO' | undefined;
@@ -22,6 +23,7 @@ export interface PrintDirectOptions {
 export interface PrintFileOptions {
     filename: string;
     printer?: string | undefined;
+    options?: { [key: string]: string } | undefined;
     success?: PrintOnSuccessFunction | undefined;
     error?: PrintOnErrorFunction | undefined;
 }
