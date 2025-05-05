@@ -1,11 +1,11 @@
-# @Alexssmusica/node-printer
+# @alexssmusica/node-printer
 
 Node.js native module for printer management and printing functionality.
 
 ## Installation
 
 ```bash
-npm install @Alexssmusica/node-printer
+npm install @alexssmusica/node-printer
 ```
 
 ## Requirements
@@ -30,7 +30,7 @@ npm install @Alexssmusica/node-printer
 Returns an array of all available printers with their properties and current jobs.
 
 ```javascript
-const printer = require('@Alexssmusica/node-printer');
+const printer = require('@alexssmusica/node-printer');
 const printers = printer.getPrinters();
 ```
 
